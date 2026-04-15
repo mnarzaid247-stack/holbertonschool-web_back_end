@@ -19,4 +19,4 @@ async def measure_runtime() -> float:
     )
 
     total = time.time() - start
-    return round(total, 2)
+    return round(total, 1)

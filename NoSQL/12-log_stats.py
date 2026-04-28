@@ -11,11 +11,11 @@ if __name__ == "__main__":
     print("{} logs".format(collection.count()))
     print("Methods:")
 
-    print("	method GET: {}".format(collection.count({"method": "GET"})))
-    print("	method POST: {}".format(collection.count({"method": "POST"})))
-    print("	method PUT: {}".format(collection.count({"method": "PUT"})))
-    print("	method PATCH: {}".format(collection.count({"method": "PATCH"})))
-    print("	method DELETE: {}".format(collection.count({"method": "DELETE"})))
+    print("\tmethod GET: {}".format(collection.count({"method": "GET"})))
+    print("\tmethod POST: {}".format(collection.count({"method": "POST"})))
+    print("\tmethod PUT: {}".format(collection.count({"method": "PUT"})))
+    print("\tmethod PATCH: {}".format(collection.count({"method": "PATCH"})))
+    print("\tmethod DELETE: {}".format(collection.count({"method": "DELETE"})))
 
     print("{} status check".format(
         collection.count({"method": "GET", "path": "/status"})

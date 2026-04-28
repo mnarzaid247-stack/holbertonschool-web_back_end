@@ -1,2 +1,2 @@
-#!/usr/bin/env mongo
-db.school.insertOne({ name: "Holberton school" })
+// my comment
+use my_db

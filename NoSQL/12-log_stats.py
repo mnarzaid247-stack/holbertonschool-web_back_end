@@ -8,15 +8,15 @@ if __name__ == "__main__":
     client = MongoClient("mongodb://localhost:27017/")
     collection = client.logs.nginx
 
-    print("{} logs".format(collection.count()))
+    print("{} logs".format(collection.count_documents({})))
     print("Methods:")
 
-    print("\tmethod GET: {}".format(collection.count({"method": "GET"})))
-    print("\tmethod POST: {}".format(collection.count({"method": "POST"})))
-    print("\tmethod PUT: {}".format(collection.count({"method": "PUT"})))
-    print("\tmethod PATCH: {}".format(collection.count({"method": "PATCH"})))
-    print("\tmethod DELETE: {}".format(collection.count({"method": "DELETE"})))
+    print("\tmethod GET: {}".format(collection.count_documents({"method": "GET"})))
+    print("\tmethod POST: {}".format(collection.count_documents({"method": "POST"})))
+    print("\tmethod PUT: {}".format(collection.count_documents({"method": "PUT"})))
+    print("\tmethod PATCH: {}".format(collection.count_documents({"method": "PATCH"})))
+    print("\tmethod DELETE: {}".format(collection.count_documents({"method": "DELETE"})))
 
     print("{} status check".format(
-        collection.count({"method": "GET", "path": "/status"})
+        collection.count_documents({"method": "GET", "path": "/status"})
     ))
